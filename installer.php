@@ -3,12 +3,15 @@
     <body>
         <h1><div align="center">Enter credentials for access to database</div></h1>
         <form action="installer.php" method="POST" name="DBAccess">
-            <table WIDTH="30%" align="center">
-                <tr><td align="right">Hostname:</td><td><input type="text" name="hostname" value="localhost"></td></tr>
-                <tr><td align="right">User</td><td><input type="text" name="user"></td></tr>
-                <tr><td align="right">Password</td><td><input type="text" name="password"></td></tr>
-                <tr><td align="right">Database name</td><td><input type="text" name="dbname"></td></tr>
-		<tr><td align="right">Search directory</td><td><input type="text" name="searchdir"></td></tr>
+            <table WIDTH="50%" align="center">
+				<?php
+				require "config.php";
+				?>
+                <tr><td width="40%" align="right">Hostname:</td><td width="60%"><input type="text" name="hostname" value="<?php echo $DBHOST ?>"></td></tr>
+                <tr><td align="right">User</td><td><input type="text" name="user" value="<?php echo $DBUSER ?>"></td></tr>
+                <tr><td align="right">Password</td><td><input type="password" name="password" value="<?php echo $DBPASS ?>"></td></tr>
+                <tr><td align="right">Database name</td><td><input type="text" name="dbname" value="<?php echo $DBNAME ?>"></td></tr>
+		<tr><td align="right">Search directory</td><td><input type="text" name="searchdir" value="<?php echo $SEARCHDIR ?>"></td></tr>
                 <tr><td></td><td><button type="Clear" value="Clear">Clear</button><input type="submit" value="Submit"></td></tr>
             </table>
         </form>
