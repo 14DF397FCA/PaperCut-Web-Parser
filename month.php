@@ -1,6 +1,6 @@
 <?php
 
-require_once './config.php';
+require_once 'config.php';
 
 $MONTH = htmlspecialchars($_GET["SelectMonth"]);
 $PRINTER = htmlspecialchars($_GET["SelectPrinter"]);

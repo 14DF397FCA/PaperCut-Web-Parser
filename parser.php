@@ -1,6 +1,6 @@
 <?php
 require("config.php");
-if ($argv[1] === "import-all")
+if ($argv[1] == "import-all")
 	{
 	echo "all file in dir\n";
 	CreateFileList($SEARCHDIR);
@@ -10,7 +10,7 @@ if (empty($argv[1]))
 	$dt = date('Y-m-d',strtotime("-1 days"));
 	$SourceFile = $SEARCHDIR . "papercut-print-log-" . $dt . ".csv";
 	echo $SourceFile;
-	//ImportCSVFile(ImportCSVFile($SourceFile));
+	ImportCSVFile(ImportCSVFile($SourceFile));
 	}
 
 function CreateFileList($SEARCHDIR)
@@ -25,7 +25,7 @@ function CreateFileList($SEARCHDIR)
 function ImportCSVFile($SourceFile)
 {
 require("config.php");
-//$SourceFile = "/var/www/shop-vl.ru/public_html/papercut/papercut-print-log-2016-11-04.csv";d
+//$SourceFile = "/var/www/shop-vl.ru/public_html/papercut/papercut-print-log-2016-11-04.csv";
 echo $SourceFile . "\n";
 $ResultFile = tempnam(sys_get_temp_dir(), 'papercut-parser');
 $file = file($SourceFile);
