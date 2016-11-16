@@ -1,6 +1,7 @@
 <?php
 
-require_once 'config.php';
+$CONFIGFILE = getcwd() . "/config.php";
+require_once($CONFIGFILE);
 
 $MONTH = htmlspecialchars($_GET["SelectMonth"]);
 $PRINTER = htmlspecialchars($_GET["SelectPrinter"]);

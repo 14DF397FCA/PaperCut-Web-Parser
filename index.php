@@ -33,7 +33,8 @@
 	echo "<a href=\"/tmp/" . $MONTH . ".csv\">Download report as CSV-file</a>";
 	echo "<br>";
 	echo "Report for a month: " . date_format($date, 'F Y');
-	require_once("config.php");
+	$CONFIGFILE = getcwd() . "/config.php";
+	require_once($CONFIGFILE);
 	$dbconnect = mysql_connect($DBHOST, $DBUSER, $DBPASS);
 	if ($dbconnect)
 	    {

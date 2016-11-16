@@ -1,5 +1,6 @@
 <?php
-require("config.php");
+$CONFIGFILE = getcwd() . "/config.php";
+require_once($CONFIGFILE);
 if ($argv[1] == "import-all")
 	{
 	echo "all file in dir\n";

@@ -41,6 +41,7 @@
 	$SEARCHDIR = htmlspecialchars($_POST['searchdir']);
         if ( (empty($DBHOST) == false) && (empty($DBUSER) == FALSE) && (empty($DBPASS) == FALSE) && (empty($DBNAME) == FALSE) )
             {
+			$CONFIGFILE = getcwd() . "/config.php";
             $fp = fopen("config.php", "w");
             fwrite($fp, "<?php\n");
             fwrite($fp, "\$DBHOST = \"" . $DBHOST . "\";\n");
